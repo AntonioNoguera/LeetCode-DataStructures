@@ -4,6 +4,9 @@
 
 // Esta solución no va a funcionar muy bien en sumas más altas, con valores más largos.
 
+//Run Time: 0ms -> 100%
+//Memory: 53.52 Mb -> 95.16%
+
 function plusOne(nums: number[]): number[] {
 
     let residuo = 1;
