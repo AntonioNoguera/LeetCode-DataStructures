@@ -2,6 +2,8 @@
 // <!-- You are given a large integer represented as an integer array digits, where each digits[i] is the ith digit of the integer. The digits are ordered from most significant to least significant in left-to-right order. The large integer does not contain any leading 0's.
 // Increment the large integer by one and return the resulting array of digits. -->
 // Esta solución no va a funcionar muy bien en sumas más altas, con valores más largos.
+//Run Time: 0ms -> 100%
+//Memory: 53.52 Mb -> 95.16%
 function plusOne(nums) {
     let residuo = 1;
     for (let i = nums.length - 1; i > -1; i--) {
