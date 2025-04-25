@@ -8,60 +8,35 @@
 
 function merge(nums1: number[], m: number, nums2: number[], n: number): void {
 
-    let resultSize: number = m + n;
-
-    let counterA: number = 0;
-    let counterB: number = 0;
-
-    if (m == 0) {
-        nums1.splice(0, nums1.length, ...nums2); 
-        return;
-    }
-
-    if (n == 0) {
-        return;
-    }
+    let pointer1 = m - 1;
+    let pointer2 = n - 1;
  
-    var final: number[] = []; 
-
-    while (resultSize > 0) {
-
-        if (nums1[counterA] < nums2[counterB]  && counterA < m) {
-            final.push(nums1[counterA]);
-            
-            nums1[ ( m + n) - resultSize] = nums1[counterA];
-            counterA++;
-        } else if (counterB < n) { //verificación de que el escenario tampoco se ocurra? (Para escenarios doned .length != n)
-            nums1[ ( m + n) - resultSize] = nums2[counterB];
-            
-            final.push(nums2[counterB]);
-            counterB++;
-        } else {
-            nums1[ ( m + n) - resultSize] = nums1[counterA];
-            final.push(nums1[counterA]);
-            counterA++;
-        }
-
-        resultSize--;
-    }
-
-    console.log(final);
+ 
 
     
-    //nums1.splice(0, nums1.length, ...final); 
+    for (let i = m + n - 1; i >= 0; i-- ) {
+        console.log(i);
 
+        if (pointer2 == -1) {
+            break;
+        }
+
+        if (nums1[pointer1] > nums2[pointer2]) {
+            nums1[i] = nums1[pointer1];
+            pointer1--;
+        } else {
+            nums1[i] = nums2[pointer2];
+            pointer2--;
+        }
+    }
 };
-
-function tryToAdd (final: number[], counterA: number, counterB: number, sizeA: number, sizeB: number) {
-
-}
 
 function problem88() {
 
-    let arrayA: number[] = [1,2,3,0,0,0];
-    let arrayB: number[] = [2,5,6];
+    let arrayA: number[] = [0];
+    let arrayB: number[] = [1];
 
-    merge(arrayA, 3, arrayB, 3); 
+    merge(arrayA, 0, arrayB, 1); 
 
     console.log(arrayA);
 }
