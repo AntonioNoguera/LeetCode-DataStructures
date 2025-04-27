@@ -11,9 +11,6 @@ function merge(nums1: number[], m: number, nums2: number[], n: number): void {
     let pointer1 = m - 1;
     let pointer2 = n - 1;
  
- 
-
-    
     for (let i = m + n - 1; i >= 0; i-- ) {
         console.log(i);
 
