@@ -7,9 +7,8 @@
 // Input: numRows = 1
 // Output: [[1]]
 
-
 //Al parecer inicializar el arreglo en 1, fue una pesima decisión de tiempo de ejecución. 
-// 23 MS -> 3.66 
+// 23 MS -> 3.66%
 
 function generate(numRows: number): number[][] {
 
